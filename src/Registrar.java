@@ -1,6 +1,14 @@
 
+
+/**
+ * @author Sindre Moldeklev
+ * @version 1.0
+ * 
+ * A class representing a student
+ */
+
 public class Registrar extends Person {
-	private int credits;
+	private double credits;
 	private double gradePoints;
 	
 	public Registrar(String name, int id){
@@ -39,17 +47,18 @@ public class Registrar extends Person {
 		return gradePoints;
 	}
 	
-	public void setCredit(int credit){
+	public void setCredit(double credit){
 		this.credits = credit;
 	}
 	
-	public int getCredit(){
+	public double getCredit(){
 		return credits;
 	}
 	
 	public double getGPA(){
+	
 		if(gradePoints <= 0){
-			return credits;
+			return 0.0;
 		} else {
 			return gradePoints / credits;
 		}

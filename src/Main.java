@@ -3,9 +3,15 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Person sindre = new Registrar("Sindre Moldeklev", 1234);
-		Person einar = new Registrar("Einar Søreide", 1111);
-		Person haakon = new Registrar("Håkon Roald", 3333);
+		
+		Registrar sindre = new Registrar("Sindre Moldeklev", 1234);
+		Registrar einar = new Registrar("Einar Søreide", 1111);
+		Registrar haakon = new Registrar("Håkon Roald", 3333);
+		
+		sindre.setCredit(5.0);
+		sindre.setGradePoints(10);
+		System.out.print("Sindres gpa is: ");
+		System.out.println(sindre.getGPA());
 		
 		Person ken = new Instructor("Ken-Thomas Nilsen", 666);
 		
@@ -40,8 +46,7 @@ public class Main {
 		info216.listStudents();
 		
 		
-		
-		
+			
 		
 	}
 }
