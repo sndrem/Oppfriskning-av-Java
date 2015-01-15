@@ -1,7 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
-public class Course {
+public class Course implements Serializable {
 	private String courseName;
 	private int courseRegCode;
 	private ArrayList<Person> students;
@@ -25,19 +27,25 @@ public class Course {
 	
 	public Person searchPerson(int id) throws StudentNotFoundException{
 		Person student = null;
-		for (Person p : students){
+		boolean found = false;
+		Iterator<Person> it = students.iterator();
+		
+		while(!found && it.hasNext()){
+			Person p = it.next();
 			if(p instanceof Registrar){
 				if(p.getID() == id){
 					student = p;	
 					System.out.println(student.getName() + " was successfully retrieved.");
+					found = true;
 					return student;
-				} else {
-					//System.out.println("Could not find any students with the id: " + id);
-					throw new StudentNotFoundException();
-				}
-			} else {
+				} 
+			}	else {
 				System.out.println("No students available");
 			}
+		}
+		
+		if(!found){
+			throw new StudentNotFoundException();
 		}
 		return student;
 	}
@@ -56,4 +64,14 @@ public class Course {
 			System.out.println(students.get(i).getName());
 		}
 	}
+	
+	public void removeStudent(Person stud) throws StudentNotFoundException{
+		if(students.remove(stud)){
+			System.out.println(stud.getName() + " was successfully removed from the course.");
+		} else {
+			throw new StudentNotFoundException();
+		}
+			
+	}
+	
 }
