@@ -3,7 +3,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		
+		/*
 		Registrar sindre = new Registrar("Sindre Moldeklev", 1234);
 		Registrar einar = new Registrar("Einar Søreide", 1111);
 		Registrar haakon = new Registrar("Håkon Roald", 3333);
@@ -44,8 +44,9 @@ public class Main {
 		
 		System.out.println("\nThese are the current students of the course");
 		info216.listStudents();
+		*/
 		
-		
+		University uni = new University("Universitet i Bergen");
 			
 		
 	}

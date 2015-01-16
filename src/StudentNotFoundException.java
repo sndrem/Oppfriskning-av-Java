@@ -1,18 +1,17 @@
-
 public class StudentNotFoundException extends Exception {
-	
+
 	String message = "We could not find the student you were looking for.";
-	
-	public StudentNotFoundException(){
-		
+
+	public StudentNotFoundException() {
+
 	}
-	
-	public String toString(){
+
+	public String toString() {
 		return message;
 	}
-	
-	public void printStackTrace(){
+
+	public void printStackTrace() {
 		System.out.println(message);
 	}
-	
+
 }

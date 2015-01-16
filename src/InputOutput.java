@@ -5,53 +5,53 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-
 public class InputOutput {
-	
-	public InputOutput(){
-		
+
+	public InputOutput() {
+
 	}
-	
-	public void save(Object o, String filename){
+
+	public void save(Object o, String filename) {
 		ObjectOutputStream out = null;
-		try{
-		out = new ObjectOutputStream(new FileOutputStream(filename + ".dat"));
-		out.writeObject(o);
-		System.out.println("The file was sucessfully saved.");
-		} catch(IOException e){
+		try {
+			out = new ObjectOutputStream(
+					new FileOutputStream(filename + ".dat"));
+			out.writeObject(o);
+			System.out.println("The file was sucessfully saved.");
+		} catch (IOException e) {
 			e.printStackTrace();
-		} catch (Exception e){ 
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
 				out.close();
-			} catch(Exception e){
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
-	public Object read(String filename){
+
+	public Object read(String filename) {
 		ObjectInputStream in = null;
 		Object obj = null;
 		try {
 			in = new ObjectInputStream(new FileInputStream(filename));
 			obj = in.readObject();
-		} catch (FileNotFoundException e){
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		} catch (IOException e){
+		} catch (IOException e) {
 			e.printStackTrace();
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
 				in.close();
-			} catch (Exception e){
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return obj;
 	}
-	
+
 }

@@ -1,30 +1,34 @@
 import java.io.Serializable;
 
-
 public class Person implements Serializable {
-	
+
 	private String name;
 	private int id;
-	
-	public Person(String name, int id){
+
+	public Person(String name, int id) {
 		this.name = name;
 		this.id = id;
 	}
-	
-	public String getName(){
+
+	public String getName() {
 		return name;
 	}
-	
-	public int getID(){
+
+	public int getID() {
 		return id;
 	}
-	
-	public void setName(String name){
+
+	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public void setID(int id){
+
+	public void setID(int id) {
 		this.id = id;
+	}
+	
+	public String toString(){
+		String info = name + " " + id;
+		return info;
 	}
 
 }
